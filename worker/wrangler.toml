@@ -1,0 +1,16 @@
+# Cloudflare Worker config for the Executive Writing Assistant's private Claude server.
+name = "exec-writer-claude"
+main = "index.js"
+compatibility_date = "2026-09-01"
+
+[vars]
+# The website(s) allowed to use this server, comma-separated, no trailing slash.
+# Set this to your GitHub Pages address, e.g. "https://yourname.github.io".
+# The GitHub workflow fills this in automatically from the ALLOWED_ORIGINS repository variable.
+ALLOWED_ORIGINS = ""
+
+# Optional: limit each device to 30 requests a minute (Cloudflare rate limiting).
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "1001"
+simple = { limit = 30, period = 60 }

@@ -6,15 +6,15 @@
 <meta name="theme-color" content="#0b2447" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0a1220" media="(prefers-color-scheme: dark)">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Exec Writer">
+<meta name="apple-mobile-web-app-title" content="Assistant">
 <meta name="description" content="Review, refine, dictate and send professional British English correspondence.">
-<title>Executive Writing Assistant</title>
+<title>Executive Assistant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400;1,8..60,600&display=swap">
-<link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="icon-192.png" type="image/png">
-<link rel="apple-touch-icon" href="icon-touch.png">
+<link rel="manifest" href="assistant.webmanifest">
+<link rel="icon" href="assist-192.png" type="image/png">
+<link rel="apple-touch-icon" href="assist-touch.png">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <script>
 // GitHub Pages build: save drafts, settings, chats and history on this device.
@@ -27,7 +27,7 @@ window.__appStore = (function(){
     del: async function(k){ ls.removeItem(P + k); }
   };
 })();
-window.__defaultView = "write";
+window.__defaultView = "assistant";
 // Offline support: cache the app so it opens without a connection.
 if ("serviceWorker" in navigator && location.protocol === "https:") window.addEventListener("load", function(){ navigator.serviceWorker.register("sw.js").catch(function(){}); });
 </script>

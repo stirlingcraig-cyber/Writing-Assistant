@@ -4,19 +4,19 @@
   "display": "standalone",
   "scope": "./",
   "lang": "en-GB",
-  "name": "Executive Writing Assistant",
-  "short_name": "Exec Writer",
-  "id": "./",
-  "start_url": "./index.html",
-  "description": "Review, rewrite, scan and export professional British English writing.",
+  "name": "Executive Assistant",
+  "short_name": "Assistant",
+  "id": "./assistant.html",
+  "start_url": "./assistant.html",
+  "description": "Your executive assistant, powered by Claude.",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "assist-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "assist-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
@@ -24,11 +24,11 @@
   ],
   "shortcuts": [
     {
-      "name": "Assistant",
-      "url": "./assistant.html",
+      "name": "Write",
+      "url": "./index.html",
       "icons": [
         {
-          "src": "assist-192.png",
+          "src": "icon-192.png",
           "sizes": "192x192"
         }
       ]
