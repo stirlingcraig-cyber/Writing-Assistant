@@ -1,0 +1,33 @@
+# Deploys the private Claude server (worker/) to Cloudflare.
+# Your Anthropic key and passcode are taken from this repository's secrets and stored
+# as encrypted Cloudflare Worker secrets — they never appear in the website or the code.
+name: Deploy Claude server
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["worker/**", ".github/workflows/deploy-claude-server.yml"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set allowed website
+        if: ${{ vars.ALLOWED_ORIGINS != '' }}
+        run: sed -i 's|^ALLOWED_ORIGINS = .*|ALLOWED_ORIGINS = "${{ vars.ALLOWED_ORIGINS }}"|' worker/wrangler.toml
+
+      - name: Deploy to Cloudflare
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: worker
+          secrets: |
+            ANTHROPIC_API_KEY
+            APP_PASSCODE
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          APP_PASSCODE: ${{ secrets.APP_PASSCODE }}
