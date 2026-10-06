@@ -7,6 +7,4 @@ A single-page writing tool for professional British English correspondence — e
 
 Drafts, settings and history are saved in this browser only (local storage). Text and photos are sent to Anthropic (via your private server, or directly with your own key) only when you use a Claude feature. If you tick "Remember these details on this device", the server address and passcode (or key) are stored in this browser — only do this on a device you control.
 
-## Hosting
 
-Static files only — served by GitHub Pages from the repository root (`index.html`). No build step. The optional private server lives in `worker/` and is deployed to Cloudflare by `.github/workflows/deploy-claude-server.yml`.
